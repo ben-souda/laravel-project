@@ -19,11 +19,9 @@ Route::get('/', function () {
 
 
 route::get('posts/{post}', function ($slug) {
-    return $slug;
 
-    // $post = file_get_contents(__DIR__ . '/../resources/posts/my-first-post.html');
-
-    // return view('post', [
-        // 'post' => $post
-    // ]);
+    $post = file_get_contents(__DIR__ . "/../resources/posts/{$slug}.html");
+    return view('post', [
+        'post' => $post
+    ]);
 });
