@@ -20,6 +20,6 @@ Route::get('/', function () {
 
 route::get('post', function () {
     return view('post',[
-        'post' => '<h1>Hello World</h1>'
+        'post' => file_get_contents(__DIR__ . '/../resources/posts/my-first-post.html')
     ]);
 });
