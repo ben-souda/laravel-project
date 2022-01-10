@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 
 route::get('post', function () {
-    return view('post',[
-        'post' => file_get_contents(__DIR__ . '/../resources/posts/my-first-post.html')
+
+    $post = file_get_contents(__DIR__ . '/../resources/posts/my-first-post.html');
+
+    return view('post', [
+        'post' => $post
     ]);
 });
